@@ -1,0 +1,18 @@
+<section class="container-fluid">
+  <h1>Movies List Component</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-md-3 col-lg-2" *ngFor="let movie of movielist; let i=index">
+        <div class="card" >
+          <img [src]="movie.image" class="card-img-top" [alt]="movie.title">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text size-12">{{movie.plot | slice:0:50}}...</p>
+            <button class="btn btn-primary" (click)="viewdetail(movie.id)">View detail</button>
+            <button class="btn btn-primary" (click)="editdetail(movie.id)">Edit movie</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

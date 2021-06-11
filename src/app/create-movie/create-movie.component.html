@@ -1,0 +1,23 @@
+<p>create-movie works!</p>
+<h1>Add a Movie</h1>
+
+<form name="addform" novalidate id="addform" #addform="ngForm" (ngSubmit)="create()">
+  <div class="row">
+    <div class="col-4">
+      <label for="title"></label>
+      <input type="text" id="title" #title="ngModel" class="form-control" name="title" [(ngModel)]="newmovie.title" required>
+      <div class="alert alert-danger" [hidden]="title.valid"> The Title is required !</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 mt-3">
+      <button type="submit" class="btn btn-success" [disabled]="addform.invalid">Save</button>
+      <!-- <button type="button" class="btn btn-success" (click)="resetMovie()">Reset</button> -->
+    </div>
+  </div>
+
+
+
+</form>
+
+  <pre>{{newmovie | json}}</pre>
